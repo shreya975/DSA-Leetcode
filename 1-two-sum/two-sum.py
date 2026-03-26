@@ -1,12 +1,13 @@
 class Solution(object):
     def twoSum(self, nums, target):
-        seen = {}
-
-        for i in range(len(nums)):
-            current = nums[i]
-            need = target - current
-
-            if need in seen:
-                return [seen[need], i]
-
-            seen[current] = i
+        for i in range(len(nums)):          # first loop
+            for j in range(i + 1, len(nums)):  # second loop
+                if nums[i] + nums[j] == target:
+                    return [i, j]
+            
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        
