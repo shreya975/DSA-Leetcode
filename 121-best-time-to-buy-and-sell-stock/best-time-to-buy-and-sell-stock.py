@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def maxProfit(self, prices):
         min_price = float('inf')
         max_profit = 0
@@ -8,12 +8,6 @@ class Solution(object):
                 min_price = price
             else:
                 profit = price - min_price
-                if profit > max_profit:
-                    max_profit = profit
+                max_profit = max(max_profit, profit)
 
         return max_profit
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
-        
